@@ -87,7 +87,7 @@ const Navbar = () => {
             ))}
             <Button
               as="a"
-              href="Kamal_resume.pdf"
+              href="kamal-resume.pdf"
               download
               variant="outline"
               size="sm"
@@ -149,7 +149,7 @@ const Navbar = () => {
               ))}
               <Button
                 as="a"
-                href="Kamal_resume.pdf"
+                href="kamal-resume.pdf"
                 download
                 variant="outline"
                 size="sm"
