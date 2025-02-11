@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamal Kiran Mahanna - Data Scientist & Analyst</title>
+    <meta name="description" content="Data Scientist & Analyst specialized in developing innovative solutions using machine learning and deep learning architectures." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Kamal Kiran Mahanna - Data Scientist & Analyst" />
+    <meta property="og:description" content="Data Scientist & Analyst specialized in developing innovative solutions using machine learning and deep learning architectures." />
+    <meta property="og:type" content="website" />
+    
+    <style>
+      /* Minimal CSS Reset and Loading State */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: #0A0F1C;
+        color: #F7FAFC;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      #root:empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      
+      #root:empty::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border: 3px solid #6D28D9;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spinner 0.8s ease-in-out infinite;
+      }
+      
+      @keyframes spinner {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #0A0F1C;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #6D28D9;
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #805AD5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
