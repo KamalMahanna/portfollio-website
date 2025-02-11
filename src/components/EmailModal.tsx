@@ -13,12 +13,9 @@ import {
   Button,
   VStack,
   useToast,
-  Box,
 } from '@chakra-ui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-
-const MotionBox = motion(Box);
 
 interface EmailModalProps {
   isOpen: boolean;

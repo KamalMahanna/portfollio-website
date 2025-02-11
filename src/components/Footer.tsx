@@ -12,7 +12,6 @@ import { FaHeart } from 'react-icons/fa'
 const MotionBox = motion(Box)
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
 
   return (
     <Box
