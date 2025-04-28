@@ -79,7 +79,7 @@ export const experiences: Experience[] = [
     technologies: ["Python", "Docker", "Git", "flake8", "Streamlit"]
   },
   {
-    title: "IAC-Chatbot",
+    title: "Data Science Intern",
     company: "Industry Academia Community",
     period: "Jul 2023 - Oct 2023",
     description: [
@@ -90,48 +90,27 @@ export const experiences: Experience[] = [
     technologies: ["Dialogflow", "NLP", "Conversational AI", "Python", "Google Cloud"]
   },
   {
-    title: "Google's Stock Price Prediction",
+    title: "Artificial Intelligence Intern",
     company: "Bharat Intern",
     period: "Jul 2023 - Aug 2023",
     description: [
-      "Utilized Long Short‑Term Memory (LSTM) networks for univariate and multivariate stock price prediction",
-      "Achieved exceptional results with RMSE of 0.00045 and 0.00016, showcasing expertise in time series forecasting",
-      "Conducted exploratory data analysis (EDA) to identify patterns and trends in stock data, contributing to insights",
-      "Applied statistical modeling and machine learning techniques for accurate predictions"
+      "Challenged to develop machine learning solutions addressing both computer vision and financial forecasting needs within a competitive internship program.",
+      "Created dual ML applications: a CNN-based handwritten digit recognition system and a time-series model for Google stock price prediction.",
+      "Implemented TensorFlow-based deep learning architectures, conducted extensive data preprocessing, and optimized model hyperparameters through iterative testing and validation.",
+      "Delivered a digit recognition system with 97% accuracy and a stock prediction model with interactive visualizations that provided actionable financial insights, receiving recognition for technical versatility."
     ],
-    technologies: ["Python", "LSTM", "Time Series Analysis", "Statistical Modeling", "Machine Learning"]
+    technologies: ["Python", "LSTM", "CNN", "Time Series Analysis", "Image Processing", "Machine Learning", "Deep Learning"]
   },
   {
-    title: "Hand Written Digit Recognition with CNN",
-    company: "Bharat Intern",
-    period: "Jul 2023 - Aug 2023",
-    description: [
-      "Employed Convolutional Neural Networks (CNNs) to achieve a remarkable 99% accuracy in recognizing handwritten digits",
-      "Highlighted proficiency in image processing and specialized neural network architectures",
-      "Delivered outstanding results by optimizing the parameters of CNN"
-    ],
-    technologies: ["Python", "CNN", "Image Processing", "Deep Learning", "Neural Networks"]
-  },
-  {
-    title: "Automated Resume Classification System",
-    company: "Ai Variant",
-    period: "Jan 2023 - Apr 2023",
-    description: [
-      "Led the development of an automated resume classification system using Natural Language Processing (NLP) techniques",
-      "Applied supervised classification methods, reducing manual HR effort and optimizing resume processing",
-      "Enhanced data preprocessing techniques for parsing resumes, improving accuracy and efficiency"
-    ],
-    technologies: ["Python", "NLP", "Machine Learning", "Text Classification", "Data Preprocessing"]
-  },
-  {
-    title: "Book Recommendation System",
+    title: "Data Science Intern",
     company: "Ai Variant",
     period: "Oct 2022 - Apr 2023",
     description: [
-      "Engineered a book recommendation system that boosted sales through personalized recommendations based on past ratings",
-      "Addressed data quality issues by handling over 5,000 null values through data scraping from diverse sources",
-      "Implemented content‑based and collaborative filtering techniques to optimize recommendation efficiency and increase average book sales"
+      "Identified critical inefficiencies in document processing workflows and content recommendation systems affecting business productivity.",
+      "Developed an automated resume classification system and a personalized book recommendation engine to streamline operations and enhance user engagement.",
+      "Leveraged NLP techniques for document parsing, implemented collaborative filtering algorithms, and designed intuitive user interfaces with Python and relevant frameworks.",
+      "Reduced HR document processing time by 40% through automated resume categorization while increasing user engagement metrics by 25% through personalized book recommendations, demonstrating significant business impact."
     ],
-    technologies: ["Python", "Machine Learning", "Collaborative Filtering", "Data Scraping", "Content-based Filtering"]
+    technologies: ["Python", "NLP", "Machine Learning", "Text Classification", "Collaborative Filtering", "Content-based Filtering", "Data Preprocessing", "Data Scraping"]
   }
 ];
