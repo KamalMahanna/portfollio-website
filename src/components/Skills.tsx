@@ -10,19 +10,19 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { 
-  FaPython, 
-  FaDatabase, 
-  FaGitAlt, 
+import {
+  FaPython,
+  FaDatabase,
+  FaGitAlt,
   FaChartBar,
   FaBrain,
   FaChartLine,
   FaChartPie,
   FaLinux,
+  FaLink,
 } from 'react-icons/fa'
 import { BiBarChartAlt2 } from 'react-icons/bi'
 import { SiPytorch, SiMongodb } from 'react-icons/si'
-import { CgApi } from 'react-icons/cg'
 import { AiOutlineApartment } from 'react-icons/ai'
 import AnimationWrapper from './AnimationWrapper'
 
@@ -53,7 +53,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Power BI", level: 85, icon: BiBarChartAlt2 },
       { name: "SQL", level: 80, icon: FaDatabase },
       { name: "Git & GitHub", level: 85, icon: FaGitAlt },
-      { name: "Lang Chain", level: 80, icon: CgApi },
+      { name: "Lang Chain", level: 80, icon: FaLink },
       { name: "Lang Graph", level: 75, icon: AiOutlineApartment },
       { name: "MongoDB", level: 70, icon: SiMongodb },
     ],
