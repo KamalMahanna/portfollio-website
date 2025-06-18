@@ -3,31 +3,15 @@ import {
   Container,
   Heading,
   Text,
-  Flex,
-} from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { projects } from '../data/projects'
-import ProjectCard from './ProjectCard'
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard';
 
-const MotionBox = motion(Box)
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-}
+const MotionBox = motion(Box);
 
 const Projects = () => {
+
   return (
     <Box py={20} id="projects" bg="brand.secondary">
       <Container maxW="container.xl">
@@ -39,12 +23,7 @@ const Projects = () => {
           textAlign="center"
           mb={16}
         >
-          <Heading
-            as="h2"
-            size="2xl"
-            mb={4}
-            color="white"
-          >
+          <Heading as="h2" size="2xl" mb={4} color="white">
             Featured Projects
           </Heading>
           <Text fontSize="xl" color="gray.400" maxW="container.md" mx="auto">
@@ -53,43 +32,38 @@ const Projects = () => {
           </Text>
         </MotionBox>
 
-        <Flex
+        <Box
+          display="flex"
+          gap={8}
           overflowX="auto"
-          pb={4}
-          sx={{
+          overflowY="hidden"
+          css={{
             '&::-webkit-scrollbar': {
               height: '8px',
             },
             '&::-webkit-scrollbar-track': {
-              background: 'whiteAlpha.100',
-              borderRadius: 'full',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
             },
             '&::-webkit-scrollbar-thumb': {
-              background: 'brand.accent',
-              borderRadius: 'full',
+              background: 'brand.primary',
+              borderRadius: '8px',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+              background: 'brand.primary',
+              filter: 'brightness(1.2)',
             },
           }}
         >
-          <MotionBox
-            display="flex"
-            gap={8}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {projects.map((project) => (
-              <motion.div key={project.id} variants={itemVariants}>
-                <Box minW="350px">
-                  <ProjectCard project={project} />
-                </Box>
-              </motion.div>
-            ))}
-          </MotionBox>
-        </Flex>
+          {projects.map((project) => (
+            <Box key={project.id} flexShrink={0} minW="450px">
+              <ProjectCard project={project} />
+            </Box>
+          ))}
+        </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

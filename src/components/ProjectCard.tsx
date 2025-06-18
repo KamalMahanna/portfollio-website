@@ -8,7 +8,6 @@ import {
   VStack,
   Link,
   Button,
-  AspectRatio,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
@@ -21,6 +20,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <AnimationWrapper>
       <MotionBox
+        width="450px"
         role="group"
         whileHover={{ scale: 1.02 }}
         transition={{
@@ -39,32 +39,30 @@ const ProjectCard = ({ project }: { project: Project }) => {
             boxShadow: "2xl",
           }}
         >
-          <AspectRatio ratio={16/9}>
-            <Box overflow="hidden" position="relative">
-              <Image
-                src={project.image}
-                alt={project.title}
-                w="full"
-                h="full"
-                objectFit="cover"
-                transition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-                _groupHover={{
-                  transform: "scale(1.1)",
-                }}
-              />
-              <Box
-                position="absolute"
-                inset={0}
-                bg="rgba(0,0,0,0.4)"
-                opacity={0}
-                transition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-                _groupHover={{ opacity: 1 }}
-              />
-            </Box>
-          </AspectRatio>
+          <Box overflow="hidden" position="relative" h="250px">
+            <Image
+              src={project.image}
+              alt={project.title}
+              w="full"
+              h="full"
+              objectFit="cover"
+              transition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+              _groupHover={{
+                transform: "scale(1.1)",
+              }}
+            />
+            <Box
+              position="absolute"
+              inset={0}
+              bg="rgba(0,0,0,0.4)"
+              opacity={0}
+              transition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+              _groupHover={{ opacity: 1 }}
+            />
+          </Box>
 
           <VStack 
-            p={6} 
+            p={4}
             align="stretch" 
             spacing={4}
             transform="translateY(0)"
@@ -113,7 +111,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 leftIcon={<FaExternalLinkAlt />}
                 variant="solid"
                 size="sm"
-                w="full"
                 bg="brand.accent"
                 boxShadow="none"
                 _hover={{
@@ -132,7 +129,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 leftIcon={<FaGithub />}
                 variant="outline"
                 size="sm"
-                w="full"
                 borderColor="brand.accent"
                 _hover={{
                   transform: "translateY(-2px)",

@@ -1,5 +1,4 @@
 import { Box, Container } from '@chakra-ui/react'
-import MouseTrail from './components/MouseTrail'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -31,7 +30,6 @@ function App() {
         },
       }}
     >
-      <MouseTrail />
       <Box position="fixed" top={0} left={0} right={0} zIndex={1000}>
         <Navbar />
       </Box>
