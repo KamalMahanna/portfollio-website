@@ -11,14 +11,14 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { experiences } from '../data/projects'
+import { openSourceContributions } from '../data/projects'
 import AnimationWrapper from './AnimationWrapper'
 
 const MotionBox = motion(Box)
 
-const Experience = () => {
+const OpenSource = () => {
   return (
-    <Box py={20} id="internship">
+    <Box py={20} id="opensource">
       <Container maxW="container.xl">
         <VStack spacing={12} align="stretch">
           <AnimationWrapper>
@@ -29,16 +29,16 @@ const Experience = () => {
                 mb={4}
                 color="white"
               >
-                Internship
+                Open Source Contributions
               </Heading>
               <Text fontSize="xl" color="gray.400" maxW="container.md" mx="auto">
-                My professional journey and contributions in the field of Data Science and AI.
+                My contributions to the open-source community.
               </Text>
             </Box>
           </AnimationWrapper>
 
           <VStack spacing={8} align="stretch">
-            {experiences.map((exp, index) => (
+            {openSourceContributions.map((exp, index) => (
               <AnimationWrapper key={index} delay={index * 0.2}>
                 <MotionBox
                   whileHover={{ scale: 1.02 }}
@@ -142,4 +142,4 @@ const Experience = () => {
   )
 }
 
-export default Experience
+export default OpenSource

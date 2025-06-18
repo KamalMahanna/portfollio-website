@@ -61,7 +61,7 @@ export interface Experience {
   technologies: string[];
 }
 
-export const experiences: Experience[] = [
+export const openSourceContributions: Experience[] = [
   {
     title: "Open Source Contributor",
     company: "Resume Matcher",
@@ -77,7 +77,10 @@ export const experiences: Experience[] = [
       }
     ],
     technologies: ["Python", "Docker", "Git", "flake8", "Streamlit"]
-  },
+  }
+];
+
+export const experiences: Experience[] = [
   {
     title: "Data Science Intern",
     company: "Industry Academia Community",

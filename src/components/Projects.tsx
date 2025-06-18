@@ -3,14 +3,13 @@ import {
   Container,
   Heading,
   Text,
-  SimpleGrid,
+  Flex,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { projects } from '../data/projects'
 import ProjectCard from './ProjectCard'
 
 const MotionBox = motion(Box)
-const MotionGrid = motion(SimpleGrid)
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -40,9 +39,9 @@ const Projects = () => {
           textAlign="center"
           mb={16}
         >
-          <Heading 
-            as="h2" 
-            size="2xl" 
+          <Heading
+            as="h2"
+            size="2xl"
             mb={4}
             color="white"
           >
@@ -54,22 +53,40 @@ const Projects = () => {
           </Text>
         </MotionBox>
 
-        <MotionGrid 
-          columns={{ base: 1, lg: 2 }} 
-          spacing={8}
-          maxW="container.xl"
-          mx="auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+        <Flex
+          overflowX="auto"
+          pb={4}
+          sx={{
+            '&::-webkit-scrollbar': {
+              height: '8px',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: 'whiteAlpha.100',
+              borderRadius: 'full',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: 'brand.accent',
+              borderRadius: 'full',
+            },
+          }}
         >
-          {projects.map((project) => (
-            <motion.div key={project.id} variants={itemVariants}>
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </MotionGrid>
+          <MotionBox
+            display="flex"
+            gap={8}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {projects.map((project) => (
+              <motion.div key={project.id} variants={itemVariants}>
+                <Box minW="350px">
+                  <ProjectCard project={project} />
+                </Box>
+              </motion.div>
+            ))}
+          </MotionBox>
+        </Flex>
       </Container>
     </Box>
   )

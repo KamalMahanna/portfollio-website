@@ -11,7 +11,7 @@ export default function MouseTrail() {
   const points = useRef<Point[]>([]);
   const rafId = useRef<number | undefined>(undefined);
   const mousePos = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const maxAge = 50;
+  const maxAge = 20;
 
   useEffect(() => {
     const canvas = canvasRef.current;

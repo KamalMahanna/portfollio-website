@@ -21,7 +21,9 @@ import {
   FaLinux,
 } from 'react-icons/fa'
 import { BiBarChartAlt2 } from 'react-icons/bi'
-import { SiPytorch } from 'react-icons/si'
+import { SiPytorch, SiMongodb } from 'react-icons/si'
+import { CgApi } from 'react-icons/cg'
+import { AiOutlineApartment } from 'react-icons/ai'
 import AnimationWrapper from './AnimationWrapper'
 
 const MotionBox = motion(Box)
@@ -51,6 +53,9 @@ const skillCategories: SkillCategory[] = [
       { name: "Power BI", level: 85, icon: BiBarChartAlt2 },
       { name: "SQL", level: 80, icon: FaDatabase },
       { name: "Git & GitHub", level: 85, icon: FaGitAlt },
+      { name: "Lang Chain", level: 80, icon: CgApi },
+      { name: "Lang Graph", level: 75, icon: AiOutlineApartment },
+      { name: "MongoDB", level: 70, icon: SiMongodb },
     ],
   },
   {
@@ -61,6 +66,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Data Analysis", level: 85, icon: FaChartBar },
       { name: "Statistical Analysis", level: 80, icon: FaChartLine },
       { name: "Data Visualization", level: 85, icon: FaChartPie },
+      { name: "Generative AI", level: 85, icon: FaBrain },
     ],
   },
 ]

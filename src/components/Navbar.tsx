@@ -23,8 +23,9 @@ const MotionBox = motion(Box)
 const NAV_ITEMS = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
+  { name: "Internship", href: "#internship" },
   { name: "Projects", href: "#projects" },
+  { name: "Open Source", href: "#opensource" },
   { name: "Skills", href: "#skills" },
   { name: "Certifications", href: "#certifications" },
   { name: "Contact", href: "#contact" },
