@@ -16,7 +16,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { DownloadIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 const MotionBox = motion(Box)
 
@@ -37,21 +37,29 @@ const Navbar = () => {
   
   const navBgOpacity = useTransform(scrollY, [0, 100], [0, 0.9])
   const navBlur = useTransform(scrollY, [0, 100], [0, 8])
+  const navBoxShadow = useTransform(scrollY, [0, 100], ["0 0 0px rgba(0,0,0,0)", "0 0 15px rgba(144, 205, 244, 0.6)"])
 
   return (
     <MotionBox
       as="nav"
       position="fixed"
-      w="100%"
+      top={4}
+      left="50%"
+      transform="translateX(-50%)"
+      maxW="container.lg"
+      w="90%"
       zIndex="sticky"
+      borderRadius="full"
       style={{
         backdropFilter: `blur(${navBlur}px)`,
+        boxShadow: navBoxShadow,
       }}
     >
       <MotionBox
         position="absolute"
         inset={0}
         bg="brand.primary"
+        borderRadius="inherit"
         style={{ opacity: navBgOpacity }}
       />
       
@@ -97,6 +105,7 @@ const Navbar = () => {
                 bg: 'whiteAlpha.100',
                 transform: 'translateY(-2px)',
               }}
+              leftIcon={<DownloadIcon />}
             >
               Resume
             </Button>
@@ -160,6 +169,7 @@ const Navbar = () => {
                 _hover={{
                   bg: 'whiteAlpha.100',
                 }}
+                leftIcon={<DownloadIcon />}
               >
                 Resume
               </Button>
