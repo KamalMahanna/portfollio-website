@@ -10,6 +10,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'yt-qna',
+    title: "YT-QnA",
+    description: "A Streamlit application that allows you to ask questions about YouTube videos. It downloads the transcript of a YouTube video, stores it in a vector database, and then uses a large language model to answer questions about the video.",
+    image: "projects/images/YT-QnA.png",
+    technologies: ["Streamlit", "ChromaDB", "Gemini API", "Groq API", "Pytube", "Docker"],
+    liveUrl: "https://yt-qna.streamlit.app/",
+    githubUrl: "https://github.com/KamalMahanna/YT-QnA",
+  },
+  {
     id: 'ai-resume-creator',
     title: "AI Resume Creator",
     description: "A powerful tool leveraging Gemini API to generate professional resumes effortlessly, ensuring well-structured and tailored outputs for diverse career needs.",
