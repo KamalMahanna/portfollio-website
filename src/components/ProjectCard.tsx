@@ -51,14 +51,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 transform: "scale(1.1)",
               }}
             />
-            <Box
-              position="absolute"
-              inset={0}
-              bg="rgba(0,0,0,0.4)"
-              opacity={0}
-              transition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-              _groupHover={{ opacity: 1 }}
-            />
           </Box>
 
           <VStack 
