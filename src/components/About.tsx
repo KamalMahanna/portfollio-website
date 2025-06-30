@@ -8,6 +8,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import type { IconType } from 'react-icons'
 import { 
   FaBrain, 
   FaChartLine, 
@@ -19,7 +20,7 @@ const MotionBox = motion(Box)
 
 interface FeatureProps {
   title: string
-  icon: any
+  icon: IconType
   description: string
 }
 

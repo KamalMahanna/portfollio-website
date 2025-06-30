@@ -10,16 +10,17 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import {
-  FaPython,
-  FaDatabase,
-  FaGitAlt,
-  FaChartBar,
-  FaBrain,
-  FaChartLine,
-  FaChartPie,
-  FaLinux,
-  FaLink,
+import type { IconType } from 'react-icons'
+import { 
+  FaPython, 
+  FaDatabase, 
+  FaGitAlt, 
+  FaChartBar, 
+  FaBrain, 
+  FaChartLine, 
+  FaChartPie, 
+  FaLinux, 
+  FaLink, 
 } from 'react-icons/fa'
 import { BiBarChartAlt2 } from 'react-icons/bi'
 import { SiPytorch, SiMongodb } from 'react-icons/si'
@@ -31,7 +32,7 @@ const MotionBox = motion(Box)
 interface Skill {
   name: string
   level: number
-  icon: any
+  icon: IconType
 }
 
 interface Certification {

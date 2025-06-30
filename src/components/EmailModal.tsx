@@ -47,7 +47,7 @@ const EmailModal = ({ isOpen, onClose }: EmailModalProps) => {
       });
 
       setTimeout(onClose, 2000);
-    } catch (error) {
+    } catch {
       toast({
         title: 'Failed to send email',
         description: 'Please try again',

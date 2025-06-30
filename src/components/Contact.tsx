@@ -11,11 +11,12 @@ import {
   Grid,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import {
-  FaGithub,
-  FaEnvelope,
-  FaLinkedin,
-  FaPhoneAlt,
+import type { IconType } from 'react-icons'
+import { 
+  FaGithub, 
+  FaEnvelope, 
+  FaLinkedin, 
+  FaPhoneAlt, 
 } from 'react-icons/fa'
 import AnimationWrapper from './AnimationWrapper'
 import EmailModal from './EmailModal'
@@ -24,7 +25,7 @@ const MotionBox = motion(Box)
 const MotionContainer = motion(Container)
 
 interface ContactInfo {
-  icon: any
+  icon: IconType
   label: string
   value: string
   href: string
