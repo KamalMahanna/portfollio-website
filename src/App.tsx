@@ -58,8 +58,8 @@ function App() {
             <Suspense fallback={<div>Loading...</div>}>
               <About />
               <Experience />
-              <Projects />
               <OpenSource />
+              <Projects />
               <Skills />
             </Suspense>
           </Container>

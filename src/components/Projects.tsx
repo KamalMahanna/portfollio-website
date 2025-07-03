@@ -1,9 +1,12 @@
+import React from 'react';
 import {
   Box,
   Container,
   Heading,
   Text,
+  IconButton,
 } from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard';
@@ -11,6 +14,13 @@ import ProjectCard from './ProjectCard';
 const MotionBox = motion(Box);
 
 const Projects = () => {
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const scroll = (scrollOffset: number) => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += scrollOffset;
+    }
+  };
 
   return (
     <Box py={20} id="projects" bg="brand.secondary">
@@ -32,34 +42,57 @@ const Projects = () => {
           </Text>
         </MotionBox>
 
-        <Box
-          display="flex"
-          gap={8}
-          overflowX="auto"
-          overflowY="hidden"
-          css={{
-            '&::-webkit-scrollbar': {
-              height: '8px',
-            },
-            '&::-webkit-scrollbar-track': {
-              background: 'rgba(255, 255, 255, 0.1)',
-              borderRadius: '8px',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              background: 'brand.primary',
-              borderRadius: '8px',
-            },
-            '&::-webkit-scrollbar-thumb:hover': {
-              background: 'brand.primary',
-              filter: 'brightness(1.2)',
-            },
-          }}
-        >
-          {projects.map((project) => (
-            <Box key={project.id} flexShrink={0} minW="450px">
-              <ProjectCard project={project} />
-            </Box>
-          ))}
+        <Box position="relative">
+          <IconButton
+            aria-label="Scroll left"
+            icon={<ChevronLeftIcon />}
+            onClick={() => scroll(-450)}
+            position="absolute"
+            left="-20px"
+            top="50%"
+            transform="translateY(-50%)"
+            zIndex="2"
+            isRound
+            variant="solid"
+            colorScheme="gray"
+            bg="whiteAlpha.400"
+            _hover={{ bg: 'whiteAlpha.600' }}
+          />
+          <Box
+            ref={scrollContainerRef}
+            id="projects-container"
+            display="flex"
+            gap={8}
+            overflowX="auto"
+            overflowY="hidden"
+            css={{
+              'scroll-behavior': 'smooth',
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+            }}
+          >
+            {projects.map((project) => (
+              <Box key={project.id} flexShrink={0} minW="450px">
+                <ProjectCard project={project} />
+              </Box>
+            ))}
+          </Box>
+          <IconButton
+            aria-label="Scroll right"
+            icon={<ChevronRightIcon />}
+            onClick={() => scroll(450)}
+            position="absolute"
+            right="-20px"
+            top="50%"
+            transform="translateY(-50%)"
+            zIndex="2"
+            isRound
+            variant="solid"
+            colorScheme="gray"
+            bg="whiteAlpha.400"
+            _hover={{ bg: 'whiteAlpha.600' }}
+          />
         </Box>
       </Container>
     </Box>
