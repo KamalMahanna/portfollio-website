@@ -18,6 +18,18 @@ function App() {
       bg="brand.primary"
       overflowX="hidden"
       position="relative"
+      bgGradient="linear(to-b, brand.primary 0%, brand.secondary 50%, brand.primary 100%)"
+      _before={{
+        content: '""',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        bg: `radial-gradient(circle at 50% 0, #6D28D940 0%, transparent 40%)`,
+        pointerEvents: 'none',
+        zIndex: 0
+      }}
       sx={{
         scrollBehavior: 'smooth',
         '&::-webkit-scrollbar': {
@@ -39,21 +51,7 @@ function App() {
       <Box as="main" pt="72px">
         <Hero />
         
-        <Box 
-          bgGradient="linear(to-b, brand.primary 0%, brand.secondary 50%, brand.primary 100%)"
-          position="relative"
-          _before={{
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            bg: 'radial-gradient(circle at 50% 50%, brand.accent 0%, transparent 70%)',
-            opacity: 0.05,
-            pointerEvents: 'none',
-          }}
-        >
+        
           <Container maxW="container.xl" px={{ base: 4, md: 8 }}>
             <Suspense fallback={<div>Loading...</div>}>
               <About />
@@ -63,7 +61,7 @@ function App() {
               <Skills />
             </Suspense>
           </Container>
-        </Box>
+        
 
         <Box bg="brand.primary">
           <Suspense fallback={<div>Loading...</div>}>

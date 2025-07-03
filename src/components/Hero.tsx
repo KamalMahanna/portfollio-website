@@ -6,7 +6,6 @@ import {
   Button, 
   Stack,
   Icon,
-  useToken,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import AnimationWrapper from './AnimationWrapper'
@@ -25,7 +24,6 @@ const scrollAnimation = {
 }
 
 const Hero = () => {
-  const [accentColor] = useToken('colors', ['brand.accent'])
 
   return (
     <Box 
@@ -36,16 +34,7 @@ const Hero = () => {
       display="flex"
       alignItems="center"
     >
-      {/* Background gradient */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        bgGradient={`radial(circle at 50% 50%, ${accentColor}20 0%, transparent 70%)`}
-        zIndex={0}
-      />
+      
 
       <Container maxW="container.lg" position="relative" zIndex={1}>
         <MotionStack
