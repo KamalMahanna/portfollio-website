@@ -4,12 +4,7 @@ import {
   Text,
   VStack,
   HStack,
-  Icon,
 } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { FaHeart } from 'react-icons/fa'
-
-const MotionBox = motion(Box)
 
 const Footer = () => {
 
