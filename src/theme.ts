@@ -25,6 +25,7 @@ const theme = extendTheme({
         background: 'brand.primary',
         color: 'white',
         minHeight: '100vh',
+        scrollBehavior: 'smooth',
       },
       '@keyframes rainbow': {
         '0%': {
