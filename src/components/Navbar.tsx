@@ -10,18 +10,18 @@ import {
   VStack,
   Drawer,
   DrawerBody,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Spacer,
 } from '@chakra-ui/react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
+import { useState } from 'react'
 import { DownloadIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 const MotionBox = motion(Box)
 
 const NAV_ITEMS = [
-  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Internship", href: "#internship" },
   { name: "Open Source", href: "#opensource" },
@@ -34,22 +34,35 @@ const NAV_ITEMS = [
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { scrollY } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  const scrollThreshold = 50
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > scrollThreshold && !isScrolled) {
+      setIsScrolled(true)
+    } else if (latest <= scrollThreshold && isScrolled) {
+      setIsScrolled(false)
+    }
+  })
   
-  const navBgOpacity = useTransform(scrollY, [0, 100], [0, 0.9])
-  const navBlur = useTransform(scrollY, [0, 100], [0, 8])
-  const navBoxShadow = useTransform(scrollY, [0, 100], ["0 0 0px rgba(0,0,0,0)", "0 0 15px rgba(144, 205, 244, 0.6)"])
+  const navBgOpacity = useTransform(scrollY, [0, scrollThreshold], [0, 0.9])
+  const navBlur = useTransform(scrollY, [0, scrollThreshold], [0, 8])
+  const navBoxShadow = useTransform(scrollY, [0, scrollThreshold], ["0 0 0px rgba(0,0,0,0)", "0 0 15px rgba(144, 205, 244, 0.6)"])
 
   return (
     <MotionBox
       as="nav"
       position="fixed"
-      top={4}
-      left="50%"
-      transform="translateX(-50%)"
-      maxW="container.lg"
-      w="90%"
       zIndex="sticky"
-      borderRadius="full"
+      layout
+      top={isScrolled ? 4 : 0}
+      left={isScrolled ? 0 : 0}
+      right={isScrolled ? 0 : 0}
+      marginX={isScrolled ? "auto" : undefined}
+      maxW={isScrolled ? "container.lg" : "100%"}
+      w={isScrolled ? "90%" : "100%"}
+      borderRadius={isScrolled ? "full" : "0px"}
       style={{
         backdropFilter: `blur(${navBlur}px)`,
         boxShadow: navBoxShadow,
@@ -64,9 +77,9 @@ const Navbar = () => {
       />
       
       <Container maxW="container.xl" position="relative">
-        <Flex h={16} alignItems="center" justify="space-between">
+        <Flex h={16} alignItems="center" justify="space-between" gap={4}>
           <Link
-            href="#home"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             fontSize="xl"
             fontWeight="bold"
             bgGradient="linear(to-r, brand.accent, brand.highlight)"
@@ -76,7 +89,9 @@ const Navbar = () => {
             KM
           </Link>
 
-          <HStack spacing={6} display={{ base: 'none', md: 'flex' }}>
+          <Spacer />
+
+          <HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.name}
@@ -94,22 +109,25 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button
-              as="a"
-              href="kamal-resume.pdf"
-              download
-              variant="outline"
-              size="sm"
-              borderColor="brand.accent"
-              _hover={{
-                bg: 'whiteAlpha.100',
-                transform: 'translateY(-2px)',
-              }}
-              leftIcon={<DownloadIcon />}
-            >
-              Resume
-            </Button>
           </HStack>
+
+          <Spacer />
+
+          <Button
+            as="a"
+            href="kamal-resume.pdf"
+            download
+            variant="outline"
+            size="sm"
+            borderColor="brand.accent"
+            _hover={{
+              bg: 'whiteAlpha.100',
+              transform: 'translateY(-2px)',
+            }}
+            leftIcon={<DownloadIcon />}
+          >
+            Resume
+          </Button>
 
           <IconButton
             display={{ base: 'flex', md: 'none' }}
@@ -131,15 +149,9 @@ const Navbar = () => {
         <DrawerOverlay />
         <DrawerContent bg="brand.primary">
           <DrawerCloseButton />
-          <DrawerHeader
-            bgGradient="linear(to-r, brand.accent, brand.highlight)"
-            bgClip="text"
-          >
-            Navigation
-          </DrawerHeader>
 
-          <DrawerBody>
-            <VStack spacing={4} align="stretch" mt={4}>
+          <DrawerBody p={0}>
+            <VStack spacing={4} align="stretch" mt={2}>
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.name}
