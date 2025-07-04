@@ -32,11 +32,11 @@ const Hero = () => {
       position="relative" 
       overflow="hidden"
       display="flex"
-      alignItems="center"
+      pt="64px"
     >
       
 
-      <Container maxW="container.lg" position="relative" zIndex={1}>
+      <Container maxW="container.lg" position="relative" zIndex={1} pt="16px">
         <MotionStack
           spacing={8}
           align="flex-start"
@@ -62,7 +62,7 @@ const Hero = () => {
                 fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
                 lineHeight="shorter"
                 fontWeight="bold"
-                mb={4}
+                mb={8}
               >
               Kamal Kiran Mahanna
               </Heading>
@@ -177,7 +177,7 @@ const Hero = () => {
       {/* Scroll indicator */}
       <MotionBox
         position="absolute"
-        bottom={8}
+        bottom={24}
         left="50%"
         transform="translateX(-50%)"
         opacity={0.5}
