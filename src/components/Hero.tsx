@@ -145,7 +145,9 @@ const Hero = () => {
                 href="https://github.com/KamalMahanna"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
                 _hover={{ color: "brand.accent", transform: "translateY(-2px)" }}
+                _focusVisible={{ color: "brand.accent", outline: "2px solid", outlineColor: "brand.accent", outlineOffset: "4px", borderRadius: "sm" }}
                 transition="all 0.3s ease"
               >
                 <Icon as={FaGithub} w={6} h={6} />
@@ -155,7 +157,9 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/kamalmahanna"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
                 _hover={{ color: "brand.accent", transform: "translateY(-2px)" }}
+                _focusVisible={{ color: "brand.accent", outline: "2px solid", outlineColor: "brand.accent", outlineOffset: "4px", borderRadius: "sm" }}
                 transition="all 0.3s ease"
               >
                 <Icon as={FaLinkedin} w={6} h={6} />
@@ -163,7 +167,9 @@ const Hero = () => {
               <Box
                 as="a"
                 href="mailto:kamalkiranmahanna@gmail.com"
+                aria-label="Send Email"
                 _hover={{ color: "brand.accent", transform: "translateY(-2px)" }}
+                _focusVisible={{ color: "brand.accent", outline: "2px solid", outlineColor: "brand.accent", outlineOffset: "4px", borderRadius: "sm" }}
                 transition="all 0.3s ease"
               >
                 <Icon as={FaEnvelope} w={6} h={6} />
