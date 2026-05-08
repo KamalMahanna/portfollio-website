@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Welcome to my portfolio website repository! This website showcases my projects, skills, and experience.
+Welcome to my portfolio website repository! This website showcases my projects, skills, and experience. Its vibecoded
 
 🔗 **Live Website:** [https://kamalmahanna.github.io/portfollio-website/](https://kamalmahanna.github.io/portfollio-website/)
 
